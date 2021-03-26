@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plog Page3</title>
+    <script src="https://kit.fontawesome.com/292eabbb53.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/blogpost3main.css">
+</head>
+<body>
+    <h1><strong>React Native Documentation Update</strong></h1>
+    <div class="parent">
+        <div class="child" id="header">     
+            <img src="images and video/Dan.jpg"  class="avatar">
+            <section class="title">
+            <h3><strong>Dan Abramov</strong></h3>
+            <h5>React Core at Facebook</h5>
+            </section>
+        </div>
+        <div  class="child" id="footer">
+            <section class="content">
+                <p>We’re excited to announce React Native 0.61, which includes a new reloading experience we’re calling Fast Refresh.</p>
+                <h2><strong><em>Fast Refresh</em></strong></h2>
+                <p>When we asked the React Native community about common pain points, one of the top answers was that the “hot reloading” feature was broken. It didn’t work reliably for function components, often failed to update the screen, and wasn’t resilient to typos and mistakes. We heard that most people turned it off because it was too unreliable.
+                    In React Native 0.61, we’re unifying the existing “live reloading” (reload on save) and “hot reloading” features into a single new feature called “Fast Refresh”. Fast Refresh was implemented from scratch with the following principles:</p>
+                <ul>
+                    <li><p>Fast Refresh fully supports modern React, including function components and Hooks.</p></li>
+                    <li><p>Fast Refresh gracefully recovers after typos and other mistakes, and falls back to a full reload when needed.</p></li>
+                    <li><p>Fast Refresh doesn’t perform invasive code transformations so it’s reliable enough to be on by default.</p></li>
+                </ul>
+                <p>To see Fast Refresh in action, check out this video:</p>
+                <div class="video">
+                <iframe src="images and video/reactrefresh.mp4">video</iframe>
+               </div>
+                <p>Give it a try, and let us know what you think! If you prefer, you can turn it off in the Dev Menu (Cmd+D on iOS, Cmd+M or Ctrl+M on Android). Turning it on and off is instant so you can do it any time.</p>
+                <p>Here are a few Fast Refresh tips:</p>
+                <ul>
+                    <li><p>Fast Refresh preserves React local state in function components (and Hooks!) by default.</p></li>
+                    <li><p>If you need to reset the React state on every edit, you can add a special // @refresh reset comment to the file with that component.</p></li>
+                    <li><p>Fast Refresh always remounts class components without preserving state. This ensures it works reliably.</p></li>
+                    <li><p>We all make mistakes in the code! Fast Refresh automatically retries rendering after you save a file. You don't need to reload the app manually after fixing a syntax or a runtime error.</p></li>
+                    <li><p>Adding a console.log or a debugger statement during edits is a neat debugging technique.</p></li>
+                </ul>
+                <p>Please report any issues with Fast Refresh on GitHub, and we’ll look into them.</p>
+                <h2><strong><em>Other Improvements</em></strong></h2>
+                <ul>
+                    <li><p>Fixed use_frameworks! CocoaPods support. In 0.60 we made some updates to integrate CocoaPods by default. Unfortunately, this broke builds using use_frameworks!. This is fixed in 0.61, making it easier to integrate React Native into your iOS projects that require building with dynamic frameworks.</p></li>
+                    <li><p>Add useWindowDimensions Hook. This new Hook automatically provides and subscribes to dimension updates, and can be used instead of the Dimensions API in most cases.</p></li>
+                    <li><p>React was upgraded to 16.9. This version deprecates old names for the UNSAFE_ lifecycle methods, contains improvements to act, and more. See the React 16.9 blog post for an automated migration script and more information.</p></li>
+                </ul>
+                <h2><strong><em>Breaking Changes</em></strong></h2>
+                <ul>
+                    <li><p>Remove React .xcodeproj. In 0.60, we introduced auto-linking support via CocoaPods. We have also integrated CocoaPods into the e2e tests runs, so that from now on, we have a unified standard way of integrating RN into iOS apps. This effectively deprecates the React .xcodeproj support, and the file has been removed starting 0.61. Note: if you use 0.60 auto-linking already, you shouldn't be affected.</p></li>
+                </ul>
+            </section>
+        </div>
+        <div class="bottom">
+            <button type="button"><a href ="project.html"><i class="fas fa-home"></i> Home! </a> </button>
+            <ul class="social">
+                <li class="bottomlist"><a href="https://www.google.com/search?q=sign+in+facebook&oq=sign+in+facebook+&aqs=chrome..69i57j0l3j0i22i30l4.10746j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-facebook"></i></a></li> 
+                <li class="bottomlist"> <a href="https://www.google.com/search?q=instagram&oq=inst&aqs=chrome.0.0i131i433j69i57j0j0i433l2j69i60j69i61l2.2202j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-instagram"></i></a> </li>
+                <li class="bottomlist"> <a href="https://www.google.com/search?q=twitter&oq=tw&aqs=chrome.1.69i57j0i131i433j0i433j46i433j69i60l4.3504j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-twitter"></i></a> </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+h1
+{
+    display: flex;
+    justify-content: center;
+    font-size: 4.5vw;
+}
+h5
+{
+    color:gray; 
+}
+.log
+{
+    padding-left: 31vw;
+}
+figcaption
+{
+    padding-left: 31vw;
+}
+q
+{
+    color:rgb(228, 228, 23)
+
+}
+@media (max-width:900px)
+{
+    p,ul,h2,h3
+    {
+         font-size: 3vw;
+    }
+}

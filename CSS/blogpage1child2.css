@@ -1,0 +1,50 @@
+#footer
+{
+    grid-area:bottom;
+
+}
+.content
+{
+    font-size: 1.5vw;
+    margin:auto;
+}
+.bottom
+{
+    grid-area:ft;
+    padding-left: 2vw;  
+}
+button
+{
+    background-color: rgb(247, 213, 20);  
+}
+button:hover
+{
+    background-color: rgb(109, 207, 140);
+}
+button a
+{
+    color:rgb(8, 8, 8);
+}
+.social
+{
+    text-align: center;
+}
+.social li
+{
+    display:inline;
+    padding-left: 1rem;
+}
+.fa-instagram
+{
+    color: rgb(240, 0, 0);
+}
+.fa-facebook
+{
+    color: rgb(44, 30, 245);
+    background-color:white;
+    border-radius: 50%;
+}
+.fa-twitter
+{
+    color: rgb(58, 161, 245);
+}

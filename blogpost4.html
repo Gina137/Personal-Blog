@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plog Page4</title>
+    <script src="https://kit.fontawesome.com/292eabbb53.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/blogpost4main.css">
+</head>
+<body>
+    <h1><strong>React Native Documentation Update</strong></h1>
+    <div class="parent">
+        <div class="child" id="header">        
+            <img src="images and video/mike.jpg"  class="avatar">
+            <section class="title">
+            <h3><strong>Mike Grabowski</strong></h3>
+            <h5 >CTO and Co-Founder at Callstack</h5>
+            </section>
+        </div>
+        <div  class="child" id="footer">
+            <section class="content">
+                <p>Today we’re releasing React Native 0.63 that ships with LogBox turned on by default.</p>
+                <h2><strong><em>LogBox</em></strong></h2>
+                <p>We’ve heard frequent feedback from the community that errors and warnings are difficult to debug in React Native. To address these issues we took a look at the entire error, warning, and log system in React Native and redesigned it from the ground up.</p>
+                  <img src="images and video/logbox.png" width="270rem" class="log" >    
+                <figcaption>fig - LogBox</figcaption>               
+                <p>LogBox is a completely redesigned redbox, yellowbox, and logging experience in React Native. In 0.62 we introduced LogBox as an opt-in. In this release, we’re launching LogBox as the default experience in all of React Native.</p>
+                <p>LogBox addresses complaints that <q>errors and warnings were too verbose, poorly formatted, or unactionable by focusing on three primary goals:</q></p>        
+                <ul>
+                    <li><p>Concise: Logs should provide the minimum amount of information necessary to debug an issue.</p></li>
+                    <li><p>Formatted: Logs should be formatted so that you can quickly find the information you need.</p></li>
+                    <li><p>Actionable: Logs should be actionable, so you can fix the issue and move on.</p></li>
+                </ul>
+                <p><u>To achieve these goals, LogBox includes:</u></p>
+                <ul>
+                    <li><p>Log notifications: We’ve redesigned the warning notifications and added support for errors so that all console.warn and console.log messages show up as notifications instead of covering your app.</p></li>
+                    <li><p>Code Frames: Every error and warning now includes a code frame that shows the source code of the log right inside the app, allowing you to quickly identify the source of your issue.</p></li>
+                    <li><p>Component Stacks: All component stacks are now stripped from error messages and put into their own section with the top three frames visible. This gives you a single, consistent space to expect stack frame information that doesn’t clutter the log message.</p></li>
+                    <li><p>Stack Frame Collapsing: By default we now collapse call stack frames not related to your application’s code so you can quickly see the issue in your app and not sift through React Native internals.</p></li>
+                    <li><p>Syntax Error Formatting: We’ve improved the formatting for syntax errors and added codeframes with syntax highlighting so you can see the source of the error, fix it, and continue coding without React Native getting in your way.</p></li>
+                </ul>
+                <p>We’ve wrapped all of these features into an improved visual design that’s consistent between errors and warnings and allows paginating through all logs in one enjoyable UI.</p>
+                <h6>With this change we’re also deprecating YellowBox in favor of LogBox APIs:</h6>
+                <ul>
+                    <li><p>LogBox.ignoreLogs(): This function replaces YellowBox.ignoreLogs([]) as a way to silence any logs that match the given strings or regexes.</p></li>
+                    <li><p>LogBox.ignoreAllLogs(): This function replaces console.disableYellowBox as a way to turn off error or warning notifications. Note: this only disables notifications, uncaught errors will still open a full screen LogBox.</p></li>
+                </ul>
+                <p>n 0.63, we will warn when using these deprecated modules or methods. Please update your call sites off of these APIs before they are removed in 0.64.</p>
+                <h2><strong><em>Pressable</em></strong></h2>
+                <p>React Native is built to enable applications to meet user’s expectations of the platform. This includes avoiding “tells”—little things that give away that the experience was built with React Native. One major source of these tells has been the Touchable components: Button, TouchableWithoutFeedback, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, and TouchableBounce. These components make your application interactive by allowing you to provide visual feedback to user interactions. However, because they include built-in styles and effects that don’t match the platform interaction, users can tell when experiences are written with React Native.</p>
+                <p>Further, as React Native has grown and our bar for high-quality applications has gone up, these components haven't grown with it. React Native now supports platforms like Web, Desktop, and TV, but support for additional input modalities has been lacking. React Native needs to support high-quality interaction experiences on all platforms.</p>
+                <p>To address these problems, we are shipping a new core component called Pressable. This component can be used to detect various types of interactions. The API was designed to provide direct access to the current state of interaction without having to maintain state manually in a parent component. It was also designed to enable platforms to extend it's capabilities to include hover, blur, focus, and more. We expect that most people will build and share components utilizing Pressable under the hood instead of relying on the default experience of something like TouchableOpacity.</p>
+                <h2><strong><em>Native Colors (PlatformColor, DynamicColorIOS)</em></strong></h2>
+                <p>Every native platform has the concept of system-defined colors. Colors that automatically respond to system theme settings such as Light or Dark mode, accessibility settings such as a High Contrast mode, and even its context within the app such as the traits of a containing view or window.
+                    While it is possible to detect some of these settings via the Appearance API and/or AccessibilityInfo and set your styles accordingly, such abstractions are not only costly to develop but are just approximating the appearance of native colors. These inconsistencies are particularly noticeable when working on a hybrid application, where React Native elements co-exist next to the native ones.                   
+                    React Native now provides an out-of-the-box solution to use these system colors. PlatformColor() is a new API that can be used like any other color in React Native.</p>
+                <h2><strong><em>Dropping iOS 9 and Node.js 8 support</em></strong></h2>
+                <p>After over four years from its release, we are dropping support for iOS 9. This change will allow us to move faster by being able to reduce the number of compatibility checks that need to be placed in the native code to detect whether a given feature was supported on a certain iOS version. With its market share of 1%, it shouldn’t have much negative impact on your customers.</p>
+                <p>At the same time, we are dropping support for Node 8. Its LTS maintenance cycle expired in December 2019. The current LTS is Node 10 and it is now the version that we are targeting. If you are still using Node 8 for the development of React Native applications, we encourage you to upgrade in order to receive all the latest security fixes and updates.</p>
+                <h2><strong><em>Other notable improvements</em></strong></h2>
+                <ul>
+                    <li><p>Support rendering <View /> in <Text /> without explicit size: You can now render any <View /> inside any <Text /> component without setting its width and height explicitly, which wasn’t always possible. On previous releases of React Native, this would result in a RedBox.</p></li>
+                    <li><p>Changed iOS LaunchScreen from xib to storyboard: Starting April 30, 2020, all apps submitted to the App Store must use an Xcode storyboard to provide the app’s launch screen and all iPhone apps must support all iPhone screens. This commit adjusts the default React Native template to be compatible with this requirement.</p></li>
+                </ul>
+            </section>     
+        </div>
+        <div class="bottom">
+            <button type="button"><a href ="project.html"><i class="fas fa-home"></i> Home! </a> </button>
+            <ul class="social">
+                <li class="bottomlist"><a href="https://www.google.com/search?q=sign+in+facebook&oq=sign+in+facebook+&aqs=chrome..69i57j0l3j0i22i30l4.10746j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-facebook"></i></a></li> 
+                <li class="bottomlist"> <a href="https://www.google.com/search?q=instagram&oq=inst&aqs=chrome.0.0i131i433j69i57j0j0i433l2j69i60j69i61l2.2202j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-instagram"></i></a> </li>
+                <li class="bottomlist"> <a href="https://www.google.com/search?q=twitter&oq=tw&aqs=chrome.1.69i57j0i131i433j0i433j46i433j69i60l4.3504j0j7&sourceid=chrome&ie=UTF-8"><i class="fab fa-twitter"></i></a> </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

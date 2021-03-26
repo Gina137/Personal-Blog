@@ -1,0 +1,41 @@
+@import "blogpost3child1.css";
+@import "blogpost3child2.css";
+.parent
+{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border:0.5vw solid black;
+    grid-template-columns:1fr;
+    grid-template-rows:7vw 1fr 4rem;
+    grid-gap: 0.4vw;
+    grid-template-areas: 
+    "top top"
+    "bottom bottom"
+    "ft ft"
+    ;
+}
+.child
+{
+    border:0.5vw solid white;
+    display:flex;
+    justify-content:right; 
+}
+#header
+{
+    grid-area: top;  
+}
+.avatar
+{
+    border-radius: 50%;
+    width:5.2vw;
+    height: 5.2vw;
+    vertical-align: middle;
+}
+.title
+{
+    display:block;
+    line-height: 0.2vw;
+    font-size: 1.6vw;  
+}

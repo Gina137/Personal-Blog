@@ -1,0 +1,70 @@
+.header
+{    
+    grid-area: top;  
+}
+.head 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.headlist 
+{ 
+    float: left;
+}
+.headlist a 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1vw 3vw;
+}
+#hovernav:hover 
+{
+    background-color: #111;
+} 
+#search
+{
+    padding-left: 27%;
+}
+.footer
+{   
+    grid-area: ft;     
+    margin-top:0;
+    padding:0;
+    overflow: hidden;
+    background-color: #333; 
+}
+.bottomlist
+{
+    float:left;
+    list-style-type:none; 
+}
+
+.footer ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottomlist i
+{
+    margin-left: 1.8em;
+    font-size: 2em;
+
+}
+.fa-instagram
+{
+    color: rgb(240, 0, 0);
+}
+.fa-facebook
+{
+    color: rgb(44, 30, 245);
+    background-color:white;
+    border-radius: 50%;
+}
+.fa-twitter
+{
+    color: rgb(58, 161, 245);
+}
